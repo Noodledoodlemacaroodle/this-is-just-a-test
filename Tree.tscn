@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://baucdxqf2sm2q"]
+
+[ext_resource type="Texture2D" uid="uid://c4dhbqshutvf1" path="res://textures/tree.png" id="1_py5ev"]
+[ext_resource type="Texture2D" uid="uid://fkr5cpx0pvav" path="res://textures/treeNM.jpg" id="2_xqb5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maplf"]
+transparency = 1
+albedo_texture = ExtResource("1_py5ev")
+normal_enabled = true
+normal_texture = ExtResource("2_xqb5b")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l2uj4"]
+material = SubResource("StandardMaterial3D_maplf")
+
+[node name="Tree" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000208378, 0.00401148, -0.00091362)
+mesh = SubResource("PlaneMesh_l2uj4")

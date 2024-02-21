@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2mhrfn7m1ohb"]
+
+[ext_resource type="SpriteFrames" uid="uid://ba8l1o02ja3di" path="res://Zombie.tres" id="1_07ivp"]
+[ext_resource type="SpriteFrames" uid="uid://b85iei6ssyqwd" path="res://Brain.tres" id="2_1uftk"]
+
+[node name="2DSprite" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_07ivp")
+animation = &"new_animation"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_1uftk")
+animation = &"BrainIdle"
+frame_progress = 0.257572

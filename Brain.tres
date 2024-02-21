@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b85iei6ssyqwd"]
+
+[ext_resource type="Texture2D" uid="uid://jkg6fvnxgqnn" path="res://textures/Brains.png" id="1_lywm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nelch"]
+atlas = ExtResource("1_lywm3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76re3"]
+atlas = ExtResource("1_lywm3")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nelch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76re3")
+}],
+"loop": true,
+"name": &"BrainIdle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

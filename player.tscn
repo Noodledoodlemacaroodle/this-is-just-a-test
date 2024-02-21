@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d36bn87pkyngi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_1mqgn"]
+[ext_resource type="SpriteFrames" uid="uid://ba8l1o02ja3di" path="res://Zombie.tres" id="2_iarur"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8r0hn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_om0t2"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_1mqgn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8r0hn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_om0t2")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.273636, 0)
+sprite_frames = ExtResource("2_iarur")
+animation = &"Idle"
