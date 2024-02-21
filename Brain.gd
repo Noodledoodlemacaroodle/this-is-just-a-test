@@ -15,5 +15,4 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	if body = "res://player.tscn":
-		
+	#if body = "res://player.tscn":
