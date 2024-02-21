@@ -43,3 +43,6 @@ func _physics_process(delta):
 	else:
 		anim.play("Idle")
 	move_and_slide()
+	
+func Player():
+	pass

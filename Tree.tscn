@@ -15,5 +15,5 @@ material = SubResource("StandardMaterial3D_maplf")
 [node name="Tree" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000208378, 0.00401148, -0.00091362)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0016087, 0.00401151, -0.000886679)
 mesh = SubResource("PlaneMesh_l2uj4")

@@ -24,6 +24,7 @@ volumetric_fog_albedo = Color(0.866667, 0.929412, 1, 1)
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ov7k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.620937, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.924639, 0.380844, 0, -0.380844, 0.924639, 0.0542235, 1.94507, 6.21786)
@@ -229,16 +230,29 @@ transform = Transform3D(4.08185, 0, 0, 0, 3.87406, 0, 0, 0, 1, -11.2253, 3.97367
 [node name="Node3D60" parent="Platform" instance=ExtResource("3_boclc")]
 transform = Transform3D(4.08185, 0, 0, 0, 3.87406, 0, 0, 0, 1, -25.6945, 3.97367, -43.9694)
 
-[node name="Brains" type="Node3D" parent="Platform"]
+[node name="Brains" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.64165, 0)
 
-[node name="Brain" parent="Platform/Brains" instance=ExtResource("4_82eok")]
+[node name="Brain" parent="Brains" instance=ExtResource("4_82eok")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.76824, 0.495567, 3.04472)
 
-[node name="Brain2" parent="Platform/Brains" instance=ExtResource("4_82eok")]
+[node name="Brain2" parent="Brains" instance=ExtResource("4_82eok")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.70964, 0.495567, 0.00373316)
 
-[node name="Brain3" parent="Platform/Brains" instance=ExtResource("4_82eok")]
+[node name="Brain3" parent="Brains" instance=ExtResource("4_82eok")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8.93707, 0.495567, 0.00373316)
+
+[node name="Brain4" parent="Brains" instance=ExtResource("4_82eok")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 7.11332, 0.495567, 8.49128)
+
+[node name="Brain5" parent="Brains" instance=ExtResource("4_82eok")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.88668, 0.495567, 8.49128)
+
+[node name="Brain6" parent="Brains" instance=ExtResource("4_82eok")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.11332, 0.495567, 6.96894)
+
+[node name="Brain7" parent="Brains" instance=ExtResource("4_82eok")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.1847, 0.495567, 8.31365)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.9966, -0.0332458, 0.0753854, -5.82075e-11, 0.914974, 0.403513, -0.0823908, -0.402141, 0.911863, 0, 3.57631, 5.77448)
