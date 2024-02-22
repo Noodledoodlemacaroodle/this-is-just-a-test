@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b85iei6ssyqwd" path="res://Brain.tres" id="2_esrf7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q2ltt"]
+radius = 0.200149
 
 [node name="Brain" type="Node3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
