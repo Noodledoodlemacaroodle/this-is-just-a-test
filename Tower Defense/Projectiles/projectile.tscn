@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://yavqnuoiwi4t"]
+
+[ext_resource type="Texture2D" uid="uid://531qp1kumc38" path="res://Projectiles/spr_projectile.png" id="1_2dnv1"]
+[ext_resource type="Script" path="res://Projectiles/projectile.gd" id="2_i58v8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiy0a"]
+atlas = ExtResource("1_2dnv1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c44bw"]
+atlas = ExtResource("1_2dnv1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fc4g2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiy0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c44bw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgk8c"]
+radius = 21.0238
+
+[node name="Projectile" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fc4g2")
+frame_progress = 0.724728
+script = ExtResource("2_i58v8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rgk8c")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
