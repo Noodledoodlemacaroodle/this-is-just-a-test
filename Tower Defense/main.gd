@@ -14,3 +14,7 @@ func _on_spawn_timer_timeout():
 	instance.position = $Path2D.position
 	$Path2D.add_child(instance)
 	
+	
+
+
+

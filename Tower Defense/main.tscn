@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b15jklkkxout"]
+[gd_scene load_steps=7 format=3 uid="uid://b15jklkkxout"]
 
 [ext_resource type="PackedScene" uid="uid://dshc166lfwrve" path="res://tile_map.tscn" id="1_eo3kq"]
 [ext_resource type="Script" path="res://main.gd" id="1_htykx"]
 [ext_resource type="PackedScene" uid="uid://d2iaufqi203ys" path="res://Enemy/Soldier.tscn" id="2_trelq"]
 [ext_resource type="PackedScene" uid="uid://cvfv6qaeorrm2" path="res://Tower/tower.tscn" id="4_qxx0f"]
+[ext_resource type="PackedScene" uid="uid://dxru1sv34nf8j" path="res://tower_preview.tscn" id="5_wlpn6"]
 
 [sub_resource type="Curve2D" id="Curve2D_t836v"]
 _data = {
@@ -28,6 +29,9 @@ rotation = 1.6421
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="Tower" parent="." instance=ExtResource("4_qxx0f")]
-position = Vector2(326, 633)
+position = Vector2(320, 640)
+
+[node name="Tower_preview" parent="." instance=ExtResource("5_wlpn6")]
+position = Vector2(1024, 896)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

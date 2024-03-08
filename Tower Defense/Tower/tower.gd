@@ -49,8 +49,8 @@ func _on_shoot_timer_timeout():
 	shoot_timer.start()
 
 func _shoot_projectile():
-	var projectile_instance = projectile.instantiate()
-	get_parent().add_child(projectile_instance)
+	projectile_instance = projectile.instantiate()
+	add_sibling(projectile_instance)
 	#projectile_instance.position = $Sprite2D/ShootPoint.position
 	projectile_instance.position = $Sprite2D/ShootPoint.global_position
 	projectile_instance.rotation = rotation
