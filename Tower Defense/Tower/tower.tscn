@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvfv6qaeorrm2"]
+[gd_scene load_steps=6 format=3 uid="uid://cvfv6qaeorrm2"]
 
 [ext_resource type="Script" path="res://Tower/tower.gd" id="1_100ln"]
 [ext_resource type="Texture2D" uid="uid://cmu4yemj4mrqm" path="res://Sprites/spr_Tower.png" id="1_oeyxc"]
+[ext_resource type="Script" path="res://Tower/TowerBody.gd" id="3_pjf1c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4lef"]
 radius = 165.012
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpblx"]
+radius = 64.0
 
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_100ln")
@@ -20,6 +24,12 @@ shape = SubResource("CircleShape2D_b4lef")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="TowerBody" type="Area2D" parent="."]
+script = ExtResource("3_pjf1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBody"]
+shape = SubResource("CircleShape2D_kpblx")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

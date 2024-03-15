@@ -46,7 +46,8 @@ func _on_area_exited(area):
 
 func _on_shoot_timer_timeout():
 	_shoot_projectile()
-	shoot_timer.start()
+	if enemy_instance != null:
+		shoot_timer.start()
 
 func _shoot_projectile():
 	projectile_instance = projectile.instantiate()
@@ -55,3 +56,4 @@ func _shoot_projectile():
 	projectile_instance.position = $Sprite2D/ShootPoint.global_position
 	projectile_instance.rotation = rotation
 	#print_debug("SHOOT")
+
