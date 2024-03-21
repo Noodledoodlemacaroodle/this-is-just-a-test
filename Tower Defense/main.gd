@@ -1,12 +1,14 @@
 extends Node2D
 @onready var enemy = preload("res://Enemy/Soldier.tscn")
-@onready var credits_label = $"Credtis label"
+@onready var credits_label = $"Credits label"
 var credits = 150
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
 	$SpawnTimer.start()
 	credits_label.text = "Credits: " + str(credits)
+	
+	
 	
 	
 
