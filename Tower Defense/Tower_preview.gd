@@ -1,5 +1,5 @@
 extends Node2D
-@onready var tower = preload("res://Tower/tower.tscn")
+@onready var tower = preload("res://Tower/tower_base.tscn")
 var can_place = true
 
 # Called when the node enters the scene tree for the first time.

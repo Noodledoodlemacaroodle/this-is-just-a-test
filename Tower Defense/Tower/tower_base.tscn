@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvfv6qaeorrm2"]
+
+[ext_resource type="Script" path="res://Tower/tower.gd" id="1_oi6l1"]
+[ext_resource type="Texture2D" uid="uid://cmu4yemj4mrqm" path="res://Sprites/spr_Tower.png" id="2_ttnpm"]
+[ext_resource type="Script" path="res://Tower/TowerBody.gd" id="3_ta3tb"]
+[ext_resource type="Script" path="res://Tower/ShootPoint.gd" id="3_y0ma4"]
+[ext_resource type="PackedScene" uid="uid://i82pbfso3r3d" path="res://Objects/radar_node.tscn" id="5_n7pg8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpblx"]
+radius = 64.0
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_oi6l1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ttnpm")
+
+[node name="ShootPoint" type="Node2D" parent="Sprite2D"]
+position = Vector2(55, -1)
+script = ExtResource("3_y0ma4")
+
+[node name="ShootTimer" type="Timer" parent="Sprite2D/ShootPoint"]
+wait_time = 1.5
+
+[node name="TowerBody" type="Area2D" parent="."]
+script = ExtResource("3_ta3tb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBody"]
+shape = SubResource("CircleShape2D_kpblx")
+
+[node name="RadarNode" parent="." instance=ExtResource("5_n7pg8")]
+
+[connection signal="timeout" from="Sprite2D/ShootPoint/ShootTimer" to="Sprite2D/ShootPoint" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="Sprite2D/ShootPoint/ShootTimer" to="." method="_on_shoot_timer_timeout"]

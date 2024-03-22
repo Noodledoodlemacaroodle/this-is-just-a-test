@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dshc166lfwrve" path="res://tile_map.tscn" id="1_eo3kq"]
 [ext_resource type="Script" path="res://main.gd" id="1_htykx"]
 [ext_resource type="PackedScene" uid="uid://d2iaufqi203ys" path="res://Enemy/Soldier.tscn" id="2_trelq"]
-[ext_resource type="PackedScene" uid="uid://cvfv6qaeorrm2" path="res://Tower/tower.tscn" id="4_qxx0f"]
+[ext_resource type="PackedScene" uid="uid://cvfv6qaeorrm2" path="res://Tower/tower_base.tscn" id="4_5ae3n"]
 [ext_resource type="Texture2D" uid="uid://cmu4yemj4mrqm" path="res://Sprites/spr_Tower.png" id="6_t6270"]
 [ext_resource type="Script" path="res://Button.gd" id="7_xv6ks"]
 
@@ -39,7 +39,7 @@ rotation = 1.6421
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
-[node name="Tower" parent="." instance=ExtResource("4_qxx0f")]
+[node name="Tower" parent="." instance=ExtResource("4_5ae3n")]
 position = Vector2(320, 640)
 
 [node name="Button" type="Button" parent="."]

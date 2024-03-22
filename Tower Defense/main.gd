@@ -35,9 +35,6 @@ func _on_button__purchase():
 
 func _defeat(value):
 	credits += value
-	if credits == null:
-		credits = 0
-	
 	credits_label.text = "Credits: " + str(credits)
 
 

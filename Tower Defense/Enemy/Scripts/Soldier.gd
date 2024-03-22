@@ -1,5 +1,5 @@
 extends PathFollow2D
-#ar main = "res://main.tscn"
+#var main = preload("res://main.tscn")
 var speed = 100
 var value = 50
 
@@ -36,6 +36,7 @@ func _on_area_2d_area_entered(area):
 
 func _soldier_death():
 		var main = get_parent().get_parent()
-		var lambda_func = func(value) : main._defeat(value)
-		lambda_func.call(value)
+		#var lambda_func = func(value) : main._defeat(value)
+		#lambda_func.call(value)
+		main._defeat(value)
 		queue_free()
